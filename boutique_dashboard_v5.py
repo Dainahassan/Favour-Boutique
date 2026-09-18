@@ -97,7 +97,7 @@ with tab2:
 
         if item_name in inventory["Item"].values:
             # UPDATE EXISTING ITEM
-            inventory.loc[inventory["Item"]==item_name,"Stock"] += stoc
+            inventory.loc[inventory["Item"]==item_name,"Stock"] += stock
             inventory.loc[inventory["Item"]==item_name,"Last Restock"] = restock_date
         else:
             # NEW ITEM
