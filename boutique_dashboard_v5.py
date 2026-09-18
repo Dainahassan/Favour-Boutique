@@ -27,7 +27,7 @@ if not os.path.exists(sales_file):
 if not os.path.exists(inventory_file):
     pd.DataFrame(columns=["Item","Stock","Buy Price","Sell Price","Supplier","Last Restock"]).to_csv(inventory_file,index=False)
 
-sales = pd.read_csv(sales_file)
+sales = pd.read_csv(sales_v5_file)
 inventory = pd.read_csv(inventory_file)
 
 tab1, tab2, tab3 = st.tabs(["Sales","Inventory","Analytics"])
@@ -72,7 +72,7 @@ with tab1:
                 })
 
                 sales = pd.concat([sales, new])
-                sales.to_csv(sales_file, index=False)
+                sales.to_csv(sales_v5_file, index=False)
 
                 inventory.loc[inventory["Item"] == item, "Stock"] -= qty
                 inventory.to_csv(inventory_file, index=False)
