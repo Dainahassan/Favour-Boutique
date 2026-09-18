@@ -81,7 +81,7 @@ with tab1:
 
                 # CLEAR INPUTS
                 if "sale_qty" not in st.session_state:
-                st.session_state["sale_qty"] = 1
+                    st.session_state["sale_qty"] = 1
 # ---------------- INVENTORY ----------------
 with tab2:
 
